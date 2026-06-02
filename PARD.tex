@@ -1,0 +1,44 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{listings}
+\usepackage{syntax}
+\usepackage{forest}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Design Specification: PARD Programming Language}
+\author{Erdinç Daşkın}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction \& Philosophy}
+PARD is a programming language designed around game design and development.
+It leverages FORTRAN's fast math and C interoperability.
+The name PARD is an abbreviation of Punching Card, which is an homage to the early days of FORTRAN.
+\section{Lexical Grammar}
+\subsection{Variables and their types}
+Variables, just like most other programming languages, are a significant part of PARD. \\
+There's 4 basic variable types:
+\begin{itemize}
+    \item \textbf{int}: A standard integer type for counts, loop counters, and IDs.
+    \item \textbf{float}: A floating-point number for positions, physics calculations, and deltatime.
+    \item \textbf{bool}: A boolean value (\texttt{true} or \texttt{false}) for state flags.
+    \item \textbf{string[N]}: A fixed-length, ultra-fast character array of size $N$.
+\end{itemize}
+As you can see, strings are not dynamically sized - this is not only for easy operation in fortran, but it also introduces a good performance boost.
+\subsection{Variable definition}
+You can easily define a variable in the following way: \\
+\texttt{int myInt = 10} \\
+\texttt{float myFloat = 10.5} \\
+\texttt{bool myBool = true} \\ 
+\texttt{string[6] myString = 'Hello!'}
+
+\section{Compiler Architecture}
+
+\end{document}
