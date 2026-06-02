@@ -35,4 +35,47 @@ You can easily define a variable in the following way:\
 `bool myBool = true`\
 `string[6] myString = ’Hello!’`
 
+## Simple usage of variables
+
+You can easily use a variable in multiple ways, here are some:\
+`int x = 2`\
+`int y = 3`\
+`int z = x + y`\
+`float f = 2.5`\
+`float g = 0.5`\
+`float h = f / g`\
+You cannot mix types: by this I mean you can't do the following:\
+`int x = 2`\
+`float y = 10.5`\
+`float z = x + y`\
+This will raise an error, as not all types used together are of the same
+type.
+
+## Converting variables to other types
+
+In the previous example, we had this:\
+`int x = 2`\
+`float y = 10.5`\
+`float z = x + y`\
+But what if we want to combine different types? Well, you can use simple
+parsing functions: `float z = x + y.tofloat`\
+There exists tofloat, toint and tostring.
+
+## Array definition
+
+Okay, how do we define arrays?\
+Before the type, put (n) where n is the lenght of said array.\
+`(2)int myInt = [10, 5]`\
+`(3)float myFloat = [10.5, 3.14, 5.5]`\
+`(3)bool myBool = (true,false,false)`\
+`(2)string[6] myString = (’Hello ’, ’World!’)`
+
+## Accessing values in an array
+
+To get a part of an array, use an index. PARD is 1-index based, e.g. the
+first item is index 1, the second is index 2 etc.\
+`(2)int myIntArray = [10, 5]`\
+`int myInt = myIntArray[2]`\
+In this exaple, myInt will be 5.
+
 # Compiler Architecture

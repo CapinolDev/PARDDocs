@@ -38,7 +38,39 @@ You can easily define a variable in the following way: \\
 \texttt{float myFloat = 10.5} \\
 \texttt{bool myBool = true} \\ 
 \texttt{string[6] myString = 'Hello!'}
-
+\subsection{Simple usage of variables}
+You can easily use a variable in multiple ways, here are some: \\
+\texttt{int x = 2} \\
+\texttt{int y = 3} \\
+\texttt{int z = x + y} \\
+\texttt{float f = 2.5} \\
+\texttt{float g = 0.5} \\
+\texttt{float h = f / g} \\
+You cannot mix types: by this I mean you can't do the following: \\
+\texttt{int x = 2} \\
+\texttt{float y = 10.5} \\
+\texttt{float z = x + y} \\
+This will raise an error, as not all types used together are of the same type.
+\subsection{Converting variables to other types}
+In the previous example, we had this: \\
+\texttt{int x = 2} \\
+\texttt{float y = 10.5} \\
+\texttt{float z = x + y} \\
+But what if we want to combine different types? Well, you can use simple parsing functions:
+\texttt{float z = x + y.tofloat} \\
+There exists tofloat, toint and tostring.
+\subsection{Array definition}
+Okay, how do we define arrays? \\
+Before the type, put (n) where n is the lenght of said array. \\
+\texttt{(2)int myInt = [10, 5]} \\
+\texttt{(3)float myFloat = [10.5, 3.14, 5.5]} \\
+\texttt{(3)bool myBool = (true,false,false)} \\ 
+\texttt{(2)string[6] myString = ('Hello ', 'World!')}
+\subsection{Accessing values in an array}
+To get a part of an array, use an index. PARD is 1-index based, e.g. the first item is index 1, the second is index 2 etc. \\
+\texttt{(2)int myIntArray = [10, 5]} \\
+\texttt{int myInt = myIntArray[2]} \\
+In this exaple, myInt will be 5.
 \section{Compiler Architecture}
 
 \end{document}
