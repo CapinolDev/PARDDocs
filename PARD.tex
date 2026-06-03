@@ -104,6 +104,14 @@ The init sub should always be the first procedure in a file.
 The draw sub is called every game tick and is meant to draw stuff on the screen. \\
 \texttt{sub draw \{\\ clear(WHITE) \\\}} \\
 By the way, the clear routine clears the screen to the passed color.
+\subsubsection{loop}
+The loop sub is called every game tick and is meant to hold the math. \\
+\texttt{sub loop \{\\ pass \\\}}
+\subsection{Using procedures}
+Here is how to use the procedures, assuming all of them are defined: \\
+\texttt{go myRout(x)} \\
+\texttt{call mySub} \\
+\texttt{y = myFunc(x)} \\
 \section{Compiler Architecture}
 There are 2 big components in PARD in the compiling proccess: the actual PARD transpiler, and a fortran compiler.
 The default compiler used by PARD is GFortran,

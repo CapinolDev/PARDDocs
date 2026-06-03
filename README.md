@@ -155,6 +155,20 @@ screen.\
 `}`\
 By the way, the clear routine clears the screen to the passed color.
 
+### loop
+
+The loop sub is called every game tick and is meant to hold the math.\
+`sub loop {`\
+`pass`\
+`}`
+
+## Using procedures
+
+Here is how to use the procedures, assuming all of them are defined:\
+`go myRout(x)`\
+`call mySub`\
+`y = myFunc(x)`\
+
 # Compiler Architecture
 
 There are 2 big components in PARD in the compiling proccess: the actual
