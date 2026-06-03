@@ -94,6 +94,29 @@ Functions are like routes that return a value. They are defined by the keyword f
 If you do not wish a routine/function to affect variables passed into it, \\you may use the  value indicator \&: \\
 \texttt{rout myRoute(\&int x, int y)\{  \\ x = y \\ \}  } \\
 In this case, if a variable is passed as the parameter x, it wont change to y globally.
+\subsection{Engine procedures}
+Now, to actually be able to function correctly and have a drawing loop, there are 3 predefined procedures by PARD which must be used in all programs. \\
+\subsubsection{init}
+The init sub is called when the program starts and its meant to initialize variables/state. \\
+\texttt{sub init \{\\ pass \\\}}
+The init sub should always be the first procedure in a file.
+\subsubsection{draw}
+The draw sub is called every game tick and is meant to draw stuff on the screen. \\
+\texttt{sub draw \{\\ clear(WHITE) \\\}} \\
+By the way, the clear routine clears the screen to the passed color.
 \section{Compiler Architecture}
-
+There are 2 big components in PARD in the compiling proccess: the actual PARD transpiler, and a fortran compiler.
+The default compiler used by PARD is GFortran,
+tho you can use your own compiler by using the -k (keep) flag during compiling, which makes it so only the PARD transpiler is used and the result is the .f90 file
+\subsection{File extension}
+PARD files don't require any specific extension (like most other languages), however, the .pard extension is highly recomended (to allow IDE functionality like intellisense etc.)
+\subsection{The transpiling process}
+PARD is not really a compiler, as it transpiles to FORTRAN.
+It uses the raylib-c binding to have the game engine functionality (big thanks to Interkosmos btw)
+Because FORTRAN is not case-sensitive, so is PARD, as all keywords are converted to lowercase during transpiling.
+Because fortran doesnt allow for variable declaration mid-code, the transpiling proccess is 2pass:
+\subsubsection{1st pass}
+In the first pass, the transpiler scans the file for all variable declarations, and then puts them all at the start, and then continues to transpile.
+\subsubsection{2nd pass}
+In the second pass, the transpiler goes and transpiles the modified file into modern Fortran.
 \end{document}
